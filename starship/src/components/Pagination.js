@@ -27,6 +27,8 @@ class XPagination extends Component {
                       
 
                       
+
+                      
                       //--Rendering the page numbers
                       const renderPageNumbers = (
                           <React.Fragment>
@@ -34,8 +36,6 @@ class XPagination extends Component {
                         
                           </React.Fragment>
                         
-
-
                       )
                        
                         
@@ -44,9 +44,7 @@ class XPagination extends Component {
                             {renderPageNumbers}
                         </React.Fragment>
                        
-                            
-                        
-                                               
+                                                
                 
                     )
 

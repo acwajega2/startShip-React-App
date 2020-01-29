@@ -54,11 +54,12 @@ class starShipList extends Component {
 
                         return(
                         <React.Fragment>
-                          <XPagination/>
-                          <div>
+                          
+                          <div className="my-5">
                           {renderStarShips}
 
                           </div>
+                          <XPagination/>
                           
                         </React.Fragment>
                            

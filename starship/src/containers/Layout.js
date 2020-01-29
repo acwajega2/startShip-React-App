@@ -1,11 +1,17 @@
 
 import React from 'react'
 import { Layout, Menu,PageHeader  } from 'antd';
+import { StarShipConsumer } from '../components/Context';
 
 const { Header, Content, Footer } = Layout;
 const CustomLayout = (props) =>{
     return(
-        <Layout>
+      <StarShipConsumer>
+      {value =>{
+        const {nextPage,prevPage,homePage} = value
+
+        return(
+          <Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" />
       <Menu
@@ -14,9 +20,9 @@ const CustomLayout = (props) =>{
         defaultSelectedKeys={['1']}
         style={{ lineHeight: '64px' }}
       >
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">StarShips</Menu.Item>
-        <Menu.Item key="3">Bookings</Menu.Item>
+        <Menu.Item key="1" onClick={homePage}>Home</Menu.Item>
+        <Menu.Item key="2" onClick={prevPage}>Previous Page</Menu.Item>
+        <Menu.Item key="3" onClick={nextPage}>Next Page</Menu.Item>
       </Menu>
     </Header>
     <PageHeader
@@ -35,6 +41,15 @@ const CustomLayout = (props) =>{
     </Content>
     <Footer style={{ textAlign: 'center' }}>StarShips ©2020 Created by Chris Allan Wajega</Footer>
   </Layout>
+
+        )
+      }}
+
+
+     
+        
+
+  </StarShipConsumer>
 
 
     );
